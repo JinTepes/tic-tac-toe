@@ -5,6 +5,7 @@ const dvSetup = document.querySelector('.setup');
 const dvGameContainer = document.querySelector('.gameContainer');
 const pbtn1 = document.querySelector("#btn1");
 const pbtn2 = document.querySelector("#btn2");
+const resetBtn = document.querySelector("#btn_reset");
 let gridItems = document.querySelectorAll('.ticGridItem');
 let player1 = {name:"", choice:"", turn:false};
 let player2 = {name:"", choice:"", turn:false};
@@ -61,6 +62,13 @@ btn_submit.addEventListener(
     }
 );
 
+resetBtn.addEventListener(
+    'click', function(){
+        //reset the game
+        resetGame();
+    }
+);
+
 //functions
 function getPlayersData(){
     //getting the player names and x/o
@@ -112,6 +120,29 @@ function gamePlacer(grid){
     gameState();
 }
 
+function resetGame(){
+    gameGrid = [];
+    //mo ning pang empty sa game grids
+    for(i=0; i<gridItems.length; i++){
+        gridItems[i].innerHTML="";
+    }
+    //who's turn is it? the player who chose X will be the first.
+    if(player1.choice=="X"){
+        document.querySelector('.gameStatus h1').innerHTML = player1.name+"'s Turn!";
+        player1.turn=true;
+    }
+    else{
+        document.querySelector('.gameStatus h1').innerHTML = player2.name+"'s Turn!";
+        player2.turn=true;
+    }
+    //para ma click balik ang grid childrens
+    let gridChilds = document.querySelector('.ticGameContainer').children;
+            //para dli na ma click ang grid childs
+            for(let i=0; i<gridChilds.length; i++){
+                gridChilds[i].style.pointerEvents="";
+            }
+}
+
 function gameState(){
    const winStates = [
        [0,1,2],
@@ -133,6 +164,7 @@ function gameState(){
         if(same3 === player1.choice.repeat(3)){
             document.querySelector('.gameStatus h1').innerHTML = player1.name+" WINS!";
             let gridChilds = document.querySelector('.ticGameContainer').children;
+            //para dli na ma click ang grid childs
             for(let i=0; i<gridChilds.length; i++){
                 gridChilds[i].style.pointerEvents="none";
             }
