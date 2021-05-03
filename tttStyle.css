@@ -7,16 +7,17 @@ html,body{width: 100%; height: 100%;}
 .colFlexDir{flex-direction: column;}
 .rowFlexDir{flex-direction: row;}
 .container{display: flex; flex-direction: column; height: 100%; width: 100%;}
-.header{height: 10rem; background-color: blue; display: flex; justify-content: center; align-items: center; font-size: 4em;}
-.mid{background-color: brown; flex-grow: 1; justify-content: center;}
+.header{height: 10rem; background-color: #E5D7BE; display: flex; justify-content: center; align-items: center; font-size: 4em;}
+.mid{background-color: #E3E8F0; flex-grow: 1; justify-content: center;}
 .footer{height: 3rem; background-color: cadetblue;}
-.xoBtn{width: 60px; font-size: 2em; margin-left: 15px;}
-#submitBtn{font-size: 2em;width: 200px;}
-.setup{align-self: center; padding: 20px; width: auto; background-color: cornflowerblue; justify-self: center;}
+.xoBtn{width: 60px; font-size: 2em; margin-left: 15px; border: none; background-color: white; border-radius: 5px;}
+#submitBtn{font-size: 3em;width: 300px; border: none; background-color: white; transition-duration: 1s;}
+#submitBtn:hover{background-color: #E3E8F0;}
+.setup{align-self: center; padding: 20px; width: auto; background-color: #B9B7BD; justify-self: center;}
 .gameContainer{align-self: center; display: /*Grid*/ none; grid-template-columns: repeat(3, auto); grid-template-rows: repeat(4, auto); padding-bottom: 60px;}
-.ticGameContainer{display: grid; grid-template-columns: repeat(3, 200px); grid-template-rows: repeat(3,200px); gap: 5px;}
-.ticGridItem{background-color: cornsilk;}
-.footer{display: flex; align-items: center; justify-content: center;}
+.ticGameContainer{background-color: black; border-style: solid; display: grid; grid-template-columns: repeat(3, 200px); grid-template-rows: repeat(3,200px); gap: 5px;}
+.ticGridItem{background-color: #fff;}
+.footer{background-color: #82807F; display: flex; align-items: center; justify-content: center;}
 .ticGridItem{display: flex; align-items: center; justify-content: center; font-size: 6em;}
 .gameStatus h1{font-size: 4em;}
-#btn_reset{font-size: 4em;}
+#btn_reset{font-size: 4em; border: none; color: white; background-color: gray; padding: 15px 30px; display: inline-block;}
